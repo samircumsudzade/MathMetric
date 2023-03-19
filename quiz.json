@@ -1,0 +1,75 @@
+{
+    "ques" : [
+        "3 yards is equal to ___ m",
+        "Find the area of a triangle with a height of 4 mm and a base of 6 mm",
+        "What is the area of a rectangle with side lengths 3 feet by 5 feet?",
+        "The Greatest Common Factor of two prime numbers is",
+        "43 kelvin is equal to __farenheit",
+        "1 nibble is equal to __bits",
+        "32 mils is equal to __ seconds",
+        "7 days is equal to __ minutes"
+  
+  
+
+     ],
+ 
+     "options" : [
+        ["4.65",
+            "5.78",
+            "2.74",
+            "6.78"
+          ],
+          ["12 mm²",
+            "5 mm²",
+            "6 mm²",
+            "24 mm²"
+          ],
+          ["4 yards",
+            "8.3 yards",
+            "5 yards",
+            "3 yards"
+          ],
+          ["1",
+            "themselves",
+            "There are no common factors",
+            "themselves"
+          ],
+          [
+            "382",
+            "-382",
+            "342",
+            "-342"
+          ],
+          [
+            "8",
+            "16",
+            "32",
+            "4"
+          ],
+          [
+            "6300",
+            "6480",
+            "5423",
+            "3320"
+          ],
+          [
+            "10020",
+            "100233",
+            "10080",
+            "10086"
+          ]
+
+     ],
+
+ 
+     "ans" : [3,
+        1,
+        3,
+        1,
+        2,
+        4,
+        2,
+        3]
+ 
+}
+ 
