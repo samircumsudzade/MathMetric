@@ -13,8 +13,19 @@ from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationTool
 from matplotlib.backend_bases import key_press_handler
 from matplotlib.figure import Figure
 import json
+from pathlib import Path
 from tkinter import messagebox as mb
 from PIL import ImageTk
+
+BASE_DIR = Path(__file__).resolve().parent
+ASSETS_DIR = BASE_DIR / "assets" / "images"
+DATA_DIR = BASE_DIR / "data"
+
+
+def asset_path(name):
+    return str(ASSETS_DIR / name)
+
+
 def new_window1():
     try:
         if root1.state() == "normal": root1.focus()
@@ -311,23 +322,23 @@ def new_window1():
     valueFrame.pack()
     root.configure(bg="#008037")
 
-    clearlastselection_btn= PhotoImage(file='clearlastselection.png')
+    clearlastselection_btn= PhotoImage(file=asset_path('clearlastselection.png'))
     img_label2=Label(image=clearlastselection_btn)
     my_button2= Button(root, image= clearlastselection_btn,command=clearFrame,borderwidth=0)
     my_button2.place(x = 0, y = 250)
 
-    clearboard_btn= PhotoImage(file='clearboard.png')
+    clearboard_btn= PhotoImage(file=asset_path('clearboard.png'))
     img_label3=Label(image=clearboard_btn)
     my_button3= Button(root, image= clearboard_btn,command=fresh,borderwidth=0)
     my_button3.place(x = 500, y = 250)
 
 
-    titlevolume_btn= PhotoImage(file='volumetitle.png')
+    titlevolume_btn= PhotoImage(file=asset_path('volumetitle.png'))
     img_label4=Label(image=titlevolume_btn)
     my_button4= Button(root, image= titlevolume_btn, borderwidth=0)
     my_button4.place(x = 0, y = 0)
 
-    back_btn= PhotoImage(file='back.png')
+    back_btn= PhotoImage(file=asset_path('back.png'))
     img_label=Label(image=back_btn)
     my_button= Button(root, image= back_btn, command= exit, borderwidth=0)
     my_button.place(x = 0, y = 0)
@@ -669,23 +680,23 @@ def new_window2():
     valueFrame1.pack()
     root.configure(bg="#008037")
 
-    clearboard_btn= PhotoImage(file='clearboard.png')
+    clearboard_btn= PhotoImage(file=asset_path('clearboard.png'))
     img_label3=Label(image=clearboard_btn)
     my_button3= Button(root, image= clearboard_btn,command=fresh,borderwidth=0)
     my_button3.place(x = 500, y = 250)
 
-    clearlastselection_btn= PhotoImage(file='clearlastselection.png')
+    clearlastselection_btn= PhotoImage(file=asset_path('clearlastselection.png'))
     img_label2=Label(image=clearlastselection_btn)
     my_button2= Button(root, image= clearlastselection_btn,command=clearFrame,borderwidth=0)
     my_button2.place(x = 0, y = 250)
 
 
-    titlevolume_btn= PhotoImage(file='areatitle.png')
+    titlevolume_btn= PhotoImage(file=asset_path('areatitle.png'))
     img_label4=Label(image=titlevolume_btn)
     my_button4= Button(root, image= titlevolume_btn, borderwidth=0)
     my_button4.place(x = 0, y = 0)
 
-    back_btn= PhotoImage(file='back.png')
+    back_btn= PhotoImage(file=asset_path('back.png'))
     img_label=Label(image=back_btn)
     my_button= Button(root, image= back_btn, command= exit, borderwidth=0)
     my_button.place(x = 0, y = 0)
@@ -859,7 +870,7 @@ def new_window3():
 
     main_window = tk.Toplevel(root1)
     app=FullScreenApp(main_window)
-    bg = PhotoImage(file = "gcdlcmbackground.png")
+    bg = PhotoImage(file=asset_path('gcdlcmbackground.png'))
     label1 = Label( main_window, image = bg)
     label1.place(x = 0, y = 0)
     frame1 = Frame(main_window)
@@ -894,7 +905,7 @@ def new_window3():
     delete_input.place(x = 525, y = 85)
         # Quit function for exiting the GCD and LCM calculator
 
-    back_btn= PhotoImage(file='back.png')
+    back_btn= PhotoImage(file=asset_path('back.png'))
     img_label=Label(image=back_btn)
     back_button = Button(main_window, image= back_btn,command = main_window.destroy, borderwidth=0)
     back_button.place(x = 0, y = 0)
@@ -947,7 +958,7 @@ def new_window4():
     app=FullScreenApp(root)
 
     root.title("Unit Converter")
-    bg = PhotoImage(file = "unitbg.png")
+    bg = PhotoImage(file=asset_path('unitbg.png'))
   
     # Show image using label
     label1 = Label( root, image = bg)
@@ -975,13 +986,13 @@ def new_window4():
     
     unitto.place(x=100, y=600,height=50, width=300)
 
-    calculateinput_btn= PhotoImage(file='calculate.png')
+    calculateinput_btn= PhotoImage(file=asset_path('calculate.png'))
     img_label3=Label(image=calculateinput_btn)
     my_button3= Button(root, image= calculateinput_btn,command=calculate,borderwidth=0)
     my_button3.place(x = 850, y = 600)
 
 
-    back_btn= PhotoImage(file='back.png')
+    back_btn= PhotoImage(file=asset_path('back.png'))
     img_label=Label(image=back_btn)
     my_button= Button(root, image= back_btn, command= exit, borderwidth=0)
     my_button.place(x=0, y=0)
@@ -991,7 +1002,7 @@ def new_window4():
     resultLabel=Label(root,textvariable=resultVar,font=("Times New Roman", 15, "bold"))
     resultLabel.place(x=500, y=500)
 
-    clearinput_btn= PhotoImage(file='clearunit.png')
+    clearinput_btn= PhotoImage(file=asset_path('clearunit.png'))
     img_label3=Label(image=clearinput_btn)
     my_button3= Button(root, image= clearinput_btn,command=delete_entry,borderwidth=0)
     my_button3.place(x = 850, y = 400)
@@ -1021,7 +1032,7 @@ def new_window6():
 
     window = tk.Toplevel()
     app=FullScreenApp(window)
-    bg = PhotoImage(file = "graphbg.png")
+    bg = PhotoImage(file=asset_path('graphbg.png'))
     label1 = Label(window, image = bg)
     label1.place(x = 0, y = 0)
     frame1 = Frame(window)
@@ -1120,7 +1131,7 @@ def new_window6():
 
     btn = Button(window, text = "Select", width = 10, bd = 0, fg = "#fff", bg = "grey", command = lambda: select_graph())
     btn.pack(side = LEFT,ipady = 0,pady = 5)
-    back_btn= PhotoImage(file='back.png')
+    back_btn= PhotoImage(file=asset_path('back.png'))
     img_label=Label(image=back_btn)
     my_button= Button(window, image= back_btn, command= exit, borderwidth=0)
     my_button.place(x = 0, y = 0)
@@ -1150,12 +1161,12 @@ def new_window7():
 
     root = Toplevel()
     app=FullScreenApp(root)
-    bg = PhotoImage(file = "quizbg.png")
+    bg = PhotoImage(file=asset_path('quizbg.png'))
     label1 = Label( root, image = bg)
     label1.place(x = 0, y = 0)
     frame1 = Frame(root)
     frame1.pack(pady = 20 )
-    back_btn= PhotoImage(file='back.png')
+    back_btn= PhotoImage(file=asset_path('back.png'))
     img_label=Label(image=back_btn)
     my_button= Button(root, image= back_btn, command= root.destroy, borderwidth=0)
     my_button.place(x = 0, y = 0)
@@ -1168,7 +1179,7 @@ def new_window7():
     root.geometry("+{}+{}".format(positionRight,positionDown))
     root.config(bg="#008037")
     root.title("Quiz")
-    with open('quiz.json') as f:
+    with open(DATA_DIR / 'quiz.json') as f:
         obj = json.load(f)
     q = (obj['ques'])
     options = (obj['options'])
@@ -1268,7 +1279,7 @@ def new_window8():
     newWindow.title("Home Page")
 
     app=FullScreenApp(newWindow)
-    bg = PhotoImage(file = "maisonn.png")
+    bg = PhotoImage(file=asset_path('maisonn.png'))
   
     # Show image using label
     label1 = Label( newWindow, image = bg)
@@ -1276,34 +1287,34 @@ def new_window8():
     frame1 = Frame(newWindow)
     frame1.pack(pady = 20 )
 
-    volume_btn= PhotoImage(file='volume.png')
+    volume_btn= PhotoImage(file=asset_path('volume.png'))
     img_label=Label(image=volume_btn)
     my_button= Button(frame1, image= volume_btn ,command= new_window1,borderwidth=0)
    
     my_button.pack(side='left', fill='both', padx=0, pady=0, expand=True)
     
-    area_btn= PhotoImage(file='area.png')
+    area_btn= PhotoImage(file=asset_path('area.png'))
     img_label=Label(image=area_btn)
     my_button= Button(frame1, image= area_btn, command= new_window2, borderwidth=0)
     my_button.pack(side='left', fill='both', padx=0, pady=0, expand=True)
 
 
-    gcdlcm_btn= PhotoImage(file='gcdlcm.png')
+    gcdlcm_btn= PhotoImage(file=asset_path('gcdlcm.png'))
     img_label=Label(image=gcdlcm_btn)
     my_button= Button(frame1, image= gcdlcm_btn, command= new_window3, borderwidth=0)
     my_button.pack(side='left', fill='both', padx=0, pady=0, expand=True)
 
-    graphs_btn= PhotoImage(file='graphs.png')
+    graphs_btn= PhotoImage(file=asset_path('graphs.png'))
     img_label=Label(image=graphs_btn)
     my_button= Button(frame1, image= graphs_btn, command= new_window6, borderwidth=0)
     my_button.pack(side='left', fill='both', padx=0, pady=0, expand=True)
 
-    unit_btn= PhotoImage(file='unit.png')
+    unit_btn= PhotoImage(file=asset_path('unit.png'))
     img_label=Label(image=graphs_btn)
     my_button= Button(frame1, image= unit_btn, command= new_window4, borderwidth=0)
     my_button.pack(side='left', fill='both', padx=0, pady=0, expand=True)
    
-    quiz_btn= PhotoImage(file='quiz.png')
+    quiz_btn= PhotoImage(file=asset_path('quiz.png'))
     img_label=Label(image=quiz_btn)
     my_button= Button(frame1, image= quiz_btn, command= new_window7, borderwidth=0)
     my_button.pack(side='left', fill='both', padx=0, pady=0, expand=True)
@@ -1330,10 +1341,10 @@ root1.title("Welcome Page")
 root1.resizable(True, True)
 canvas = Canvas()
 canvas.pack(fill=tk.BOTH, expand=True)
-image = ImageTk.PhotoImage(file="mathmetric.png")
+image = ImageTk.PhotoImage(file=asset_path('mathmetric.png'))
 canvas.create_image(-10, -10, image=image, anchor=NW)
 
-home_btn= PhotoImage(file='home.png')
+home_btn= PhotoImage(file=asset_path('home.png'))
 img_label=Label(image=home_btn)
 my_button1= Button(root1, image= home_btn, command= new_window8, borderwidth=0)
 my_button1.place(x =90, y = 870)
